@@ -17508,3 +17508,12 @@ Entries:
   id: 1932
   time: '2026-02-27T17:10:39.0000000+00:00'
   url: https://github.com/Monolith-Station/Monolith/pull/3257
+- author: Arcticular1
+  changes:
+    - type: Add
+      message: The Syndicate LEVIATHAN 520mm howitzer has been spotted in the sector.
+    - type: Tweak
+      message: The Saintie has received a new armament.
+  id: 1933
+  time: '2026-02-28T03:43:46.0000000+00:00'
+  url: https://github.com/Monolith-Station/Monolith/pull/3109
