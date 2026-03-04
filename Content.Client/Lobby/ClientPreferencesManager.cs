@@ -1,11 +1,13 @@
 using System.Linq;
 using Content.Shared._Mono.Company;
+using Content.Shared.CCVar;
 using Content.Shared.Preferences;
 using Robust.Client;
 using Robust.Client.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.Lobby
 {
@@ -19,6 +21,8 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IClientNetManager _netManager = default!;
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!; // Forge-Change
+        [Dependency] private readonly Players.PlayTimeTracking.JobRequirementsManager _jobRequirements = default!; // Forge-Change
 
         public event Action? OnServerDataLoaded;
 
@@ -66,13 +70,19 @@ namespace Content.Client.Lobby
             // Verify company exists if this is a humanoid profile
             if (profile is HumanoidCharacterProfile humanoidProfile)
             {
+                // Forge-Change-Start
+                var humanoid = humanoidProfile;
+
                 var protoManager = IoCManager.Resolve<IPrototypeManager>();
-                if (!string.IsNullOrEmpty(humanoidProfile.Company) &&
-                    humanoidProfile.Company != "None" &&
-                    !protoManager.HasIndex<CompanyPrototype>(humanoidProfile.Company))
+                if (!string.IsNullOrEmpty(humanoid.Company) &&
+                    humanoid.Company != "None" &&
+                    !protoManager.HasIndex<CompanyPrototype>(humanoid.Company))
                 {
-                    profile = humanoidProfile.WithCompany("None");
+                    humanoid = humanoid.WithCompany("None");
                 }
+
+                profile = humanoid;
+                // Forge-Change-End
             }
 
             profile.EnsureValid(_playerManager.LocalSession!, collection);
@@ -88,6 +98,16 @@ namespace Content.Client.Lobby
 
         public void CreateCharacter(ICharacterProfile profile)
         {
+            // Forge-Change-Start: apply whitelisted starting balance for brand new characters so UI matches server
+            if (profile is HumanoidCharacterProfile humanoidProfile &&
+                _jobRequirements.IsWhitelisted() &&
+                humanoidProfile.BankBalance == HumanoidCharacterProfile.DefaultBalance)
+            {
+                var startingBalance = _cfg.GetCVar(CCVars.GameWhitelistedStartingBalance);
+                profile = humanoidProfile.WithBankBalance(startingBalance);
+            }
+            // Forge-Change-End
+
             var characters = new Dictionary<int, ICharacterProfile>(Preferences.Characters);
             var lowest = Enumerable.Range(0, Settings.MaxCharacterSlots)
                 .Except(characters.Keys)
