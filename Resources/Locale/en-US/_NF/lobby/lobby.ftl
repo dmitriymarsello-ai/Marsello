@@ -43,6 +43,13 @@ frontier-lobby-pirate-description = This is the ultimate hideout where Phaethon 
    - Find a crew to join
    - Socialize with other Phaethon Dynasty soldiers
 
+frontier-lobby-renegate-subtext = A rough fort for crews that chose their own law over someone else's.
+frontier-lobby-renegate-description = Outpost of the rebel colonies. Here you can:
+   - Serve in the Baron's chain of command
+   - Outfit ships at the renegate shipyard
+   - Hunt bounties and trade on your own terms
+   - Crew up with others who turned away from the core powers
+
 # Crew Menu
 frontier-lobby-crew-vessel = [bold][color=#A88B5E]Vessel:[/color][/bold] {$name}
 frontier-lobby-crew-class-prefix = [bold][color=#A88B5E]Classes:[/color][/bold]{" "}
