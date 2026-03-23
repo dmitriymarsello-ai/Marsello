@@ -21,7 +21,7 @@
     - RogueHardsuit
 
 - type: entity
-  parent: [ ClothingOuterHardsuitBase, BaseFactionGearPDVT2 ]
+  parent: [ ClothingOuterHardsuitSyndie ] # Forge-Change-delete: BaseFactionGearPDVT2
   id: ClothingOuterHardsuitPDVMedic
   name: PDV CV-82 combat tacsuit
   description: A field medic combat hardsuit designed by the Phaethon Dynasty. The armor features various reinforced plating in vital areas.
