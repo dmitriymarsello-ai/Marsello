@@ -1,0 +1,1 @@
+ent-SurgeryRemoveHeart = Удалить сердце
