@@ -1,4 +1,4 @@
-#Меню операции
+# Меню операции
 ent-SurgeryRemoveHeart = Удалить сердце
 ent-SurgeryOpenIncision = Открыть разрез
 ent-SurgeryCloseIncision = Закрыть разрез
@@ -33,7 +33,7 @@ ent-SurgeryInsertStomach = Вставить желудок
 ent-SurgeryRemoveEyes = Удалить глаза
 ent-SurgeryInsertEyes = Вставить глаза
 
-#Этапы операций
+# Этапы операций
 ent-SurgeryStepOpenIncisionScalpel = Сделать разрез скальпелем
 ent-SurgeryStepClampBleeders = Установить зажимы
 ent-SurgeryStepRetractSkin = Установить ретрактор
@@ -64,7 +64,7 @@ ent-SurgeryStepInsertHeart = Установить сердце
 ent-SurgeryStepSealOrganWound = Запечатать рану
 ent-SurgeryStepRemoveCorticalBorer = Удалить кортикального бурильщика
 
-#КПБ
+# КПБ
 ent-PartIPC = часть тела КПБ
 ent-TorsoIPC = торс КПБ
 ent-HeadIPC = голова КПБ
@@ -78,29 +78,29 @@ ent-LeftFootIPC = левая ступня КПБ
 ent-RightFootIPC = правая ступня КПБ
 
 
-#Органы КПБ
+# Органы КПБ
 ent-OrganIPCEyes = глаза КПБ
 ent-OrganIPCTongue = голосовой модуль КПБ
 ent-OrganIPCEars = слуховой модуль КПБ
 ent-OrganIPCPump = жидкостная помпа КПБ
 
 
-#Дварф
+# Дварф
 ent-RightHandDwarf = правое запястье дварфа
 ent-LeftHandDwarf = левое запястье дварфа
 
 
-#Фелиниды
+# Фелиниды
 ent-LeftHandFelinid = левое запястье фелинида
 ent-RightHandFelinid = правое запястье фелинида
 
 
-#Юви
+# Юви
 ent-LeftHandYowie = левое запястье Юви
 ent-RightHandYowie = правое запястье Юви
 
 
-#Тараян
+# Тараян
 ent-PartTajaran = часть тела Тараян
 ent-TorsoTajaran = тело Тараян
 ent-HeadTajaran = голова Тараян
@@ -114,7 +114,7 @@ ent-LeftFootTajaran = левая стопа Тараян
 ent-RightFootTajaran = правая стопа Тараян
 
 
-#Хитиниды
+# Хитиниды
 ent-PartChitinidBase = часть тела Хитинида
 ent-TorsoChitinid = тело Хитинида
 ent-HeadChitinid = голова Хитинида
@@ -128,7 +128,7 @@ ent-LeftFootChitinid = левая стопа Хитинида
 ent-RightFootChitinid = правая стопа Хитинида
 
 
-#Гидракины
+# Гидракины
 ent-PartHydrakin = часть тела Гидракина
 ent-TorsoHydrakin = тело Гидракина
 ent-HeadHydrakin = голова Гидракина
@@ -142,7 +142,7 @@ ent-LeftFootHydrakin = левая стопа Гидракина
 ent-RightFootHydrakin = правая стопа Гидракина
 
 
-#Резоми
+# Резоми
 ent-PartResomi = часть тела Резоми
 ent-TorsoResomi = тело Резоми
 ent-HeadResomi = голова Резоми
